@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&Nanum+Gothic+Coding:wght@700&display=swap");
 @import "_variables.scss";
 @import "_elements.scss";
 
@@ -29,15 +29,16 @@ p {
 }
 
 body {
+  color: $color-white;
   font-family: "Open Sans", sans-serif;
   margin: 0px;
   cursor: default;
-  background-color: $color-background-grey;
+  background-color: rgb(5, 5, 5);
 }
 
 a {
   text-decoration: none;
-  color: $color-black;
+  color: $color-white;
 }
 
 ul {
@@ -60,11 +61,12 @@ nav {
   height: 40px;
   left: 0px;
   top: 0px;
-  background: #c4c4c4;
+  background: rgb(5, 5, 5);
   transition: $animation-duration linear;
 
 
   .logo {
+    color: $color-white;
     font-size: 24px;
     margin-left: 5px;
     transition: $animation-duration linear;
@@ -85,7 +87,24 @@ nav {
   height: 0;
   padding-bottom: 80vh;
 
+
   .home__title {
+    --interval: 2s;
+    text-shadow:
+      0 0 1px var(--color1),
+      0 0 2px var(--color2),
+      0 0 4px var(--color3),
+      0 0 10px var(--color4);
+    will-change: filter, color;
+    filter: saturate(30%);
+    animation: flicker steps(100) var(--interval) 1s infinite;
+
+    color: lightyellow;
+    --color1: rgb(94, 255, 255);
+    --color2: rgb(49, 60, 153);
+    --color3: rgb(39, 255, 219);
+    --color4: rgb(0, 204, 255);
+
     font-size: 300px;
     font-weight: $weight-extra-bold;
     display: flex;
@@ -114,6 +133,7 @@ nav {
   }
 
   .home__subtitle {
+
     position: absolute;
     top: 75vh;
     font-weight: $weight-bold;
@@ -202,6 +222,13 @@ nav {
   }
 }
 
+@keyframes flicker {
+  50% {
+    color: white;
+    filter: saturate(100%) hue-rotate(20deg);
+  }
+}
+
 //Work
 #works {
   width: 99vw;
@@ -220,7 +247,7 @@ nav {
       margin-top: 5vh;
       width: 60vw;
       height: 80vh;
-      background: #9d9d9d;
+      background: #242424;
 
       @include breakpoint(xs) {
         float: none;
@@ -249,7 +276,7 @@ nav {
       margin-top: 20vw;
       width: 60vw;
       height: 80vh;
-      background: #9d9d9d;
+      background: #242424;
 
       @include breakpoint(xs) {
         float: none;
@@ -280,7 +307,8 @@ nav {
 #details {
   width: 99vw;
   height: 0;
-  padding-bottom: 150vh;
+  padding-bottom: 0vh;
+  position: relative;
 
   .details__title {
     margin-left: 8vw;
@@ -292,35 +320,35 @@ nav {
     box-shadow: $box-shadow;
   }
 
-  .details__left img {
-    margin-top: 0vh;
-    float: left;
+  // .details__left img {
+  //   margin-top: 0vh;
+  //   float: left;
 
-    @include breakpoint(xs) {
-      margin-top: 20vh;
-      margin-left: 8vw;
-      width: 300px;
-      height: 225px;
-    }
+  //   @include breakpoint(xs) {
+  //     margin-top: 20vh;
+  //     margin-left: 8vw;
+  //     width: 300px;
+  //     height: 225px;
+  //   }
 
-    @include breakpoint(sm) {
-      margin-left: 8vw;
-      width: 300px;
-      height: 225px;
-    }
+  //   @include breakpoint(sm) {
+  //     margin-left: 8vw;
+  //     width: 300px;
+  //     height: 225px;
+  //   }
 
-    @include breakpoint(md) {
-      margin-left: 8vw;
-      width: 500px;
-      height: 375px;
-    }
+  //   @include breakpoint(md) {
+  //     margin-left: 8vw;
+  //     width: 500px;
+  //     height: 375px;
+  //   }
 
-    @include breakpoint(lg) {
-      margin-left: 8vw;
-      width: 500px;
-      height: 375px;
-    }
-  }
+  //   @include breakpoint(lg) {
+  //     margin-left: 8vw;
+  //     width: 500px;
+  //     height: 375px;
+  //   }
+  // }
 
   .details__right img {
     float: right;
@@ -346,16 +374,31 @@ nav {
 
     @include breakpoint(lg) {
       margin-top: 30vh;
-      width: 550px;
-      height: 609px;
+      width: 40%;
+      height: 40%;
     }
   }
 
-  .details__list {
-    z-index: 1;
+  .details_description {
+    z-index: 2;
+
+    margin-top: 5vh;
+    margin-left: 8vw;
 
     ul {
       transition: $animation-duration linear;
+      font-weight: 800;
+      font-size: 24px;
+
+      li:first-child {
+        margin-top: 3vh;
+      }
+
+      li {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
   }
 }
