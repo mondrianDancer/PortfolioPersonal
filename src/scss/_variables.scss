@@ -1,0 +1,43 @@
+/* Color */
+$color-white: #ffffff;
+$color-light-white: #eeeeee;
+$color-dark-white: #bdbdbd;
+$color-yellow: #f9a719;
+$color-dark-yellow: #a17426;
+$color-black: #4d4d4d;
+$color-dark-grey: #4d4d4d;
+$color-grey: #616161;
+$color-light-grey: #7c7979;
+$color-blue: #73aace;
+$color-orange: #feb546;
+$color-black: #000000;
+$color-grey-black: #292929;
+
+$color-background-grey: #d6d6d6;
+
+/* Font size */
+$font-large: 48px;
+$font-medium: 36px;
+$font-regular: 18px;
+$font-small: 16px;
+$font-micro: 14px;
+
+/* Font weight */
+$weight-extra-bold: 800;
+$weight-bold: 700;
+$weight-semi-bold: 600;
+$weight-regular: 400;
+
+/* Size */
+$size-border-radius: 4px;
+
+/* Animation */
+$animation-duration: 300ms;
+
+/* Box Shadow */
+$box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+0 12.5px 10px rgba(0, 0, 0, 0.06),
+0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+0 100px 80px rgba(0, 0, 0, 0.12);

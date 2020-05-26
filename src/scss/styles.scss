@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
+@import "_variables.scss";
+@import "_elements.scss";
+
+/* Typography */
+h1 {
+  font-size: $font-large;
+  font-weight: $weight-bold;
+}
+
+h2 {
+  font-size: $font-medium;
+  font-weight: $weight-semi-bold;
+}
+
+h3 {
+  font-size: $font-regular;
+  font-weight: $weight-regular;
+}
+
+p {
+  font-size: $font-regular;
+  font-weight: $weight-regular;
+}
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  cursor: default;
+  background-color: $color-background-grey;
+}
+
+a {
+  text-decoration: none;
+  color: $color-black;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+// Navigation
+nav {
+  z-index: 1;
+  position: fixed;
+  width: 99vw;
+  height: 40px;
+  left: 0px;
+  top: 0px;
+  background: #c4c4c4;
+  transition: $animation-duration linear;
+
+
+  .logo {
+    font-size: 24px;
+    margin-left: 5px;
+    transition: $animation-duration linear;
+  }
+}
+
+.nav--hide {
+  height: 0;
+
+  .logo {
+    transform: translateY(-40px);
+  }
+}
+
+//Home
+#home {
+  width: 99vw;
+  height: 0;
+  padding-bottom: 80vh;
+
+  .home__title {
+    font-size: 300px;
+    font-weight: $weight-extra-bold;
+    display: flex;
+    justify-content: center;
+    transition: $animation-duration linear;
+
+    @include breakpoint(xs) {
+      font-size: 80px;
+      margin-top: 40vh;
+    }
+
+    @include breakpoint(sm) {
+      font-size: 150px;
+      margin-top: 35vh;
+    }
+
+    @include breakpoint(md) {
+      font-size: 200px;
+      margin-top: 26vh;
+    }
+
+    @include breakpoint(lg) {
+      font-size: 300px;
+      margin-top: 26vh;
+    }
+  }
+
+  .home__subtitle {
+    position: absolute;
+    top: 75vh;
+    font-weight: $weight-bold;
+    transition: $animation-duration linear;
+
+    @include breakpoint(xs) {
+      font-size: 18px;
+      left: 25vw;
+    }
+
+    @include breakpoint(sm) {
+      font-size: 24px;
+      left: 35vw;
+    }
+
+    @include breakpoint(md) {
+      font-size: $font-medium;
+      left: 35vw;
+    }
+
+    @include breakpoint(lg) {
+      font-size: $font-medium;
+      left: 55vw;
+    }
+  }
+
+  .home__subtitle2 {
+    position: absolute;
+    top: 80vh;
+    font-weight: $weight-bold;
+    transition: $animation-duration linear;
+
+    @include breakpoint(xs) {
+      font-size: 18px;
+      left: 25vw;
+    }
+
+    @include breakpoint(sm) {
+      font-size: 24px;
+      left: 35vw;
+    }
+
+    @include breakpoint(md) {
+      font-size: $font-medium;
+      left: 35vw;
+    }
+
+    @include breakpoint(lg) {
+      font-size: $font-medium;
+      left: 55vw;
+    }
+  }
+
+  .home__img-dancer {
+    position: absolute;
+    z-index: -1;
+    transition: $animation-duration linear;
+
+    @include breakpoint(xs) {
+      right: 25vw;
+      top: 15vh;
+      width: 250px;
+      height: 250px;
+    }
+
+    @include breakpoint(sm) {
+      right: 30vw;
+      top: 15vh;
+      width: 300px;
+      height: 300px;
+    }
+
+    @include breakpoint(md) {
+      right: 0vw;
+      top: 20vh;
+      width: 400px;
+      height: 400px;
+    }
+
+    @include breakpoint(lg) {
+      right: 10vw;
+      top: 20vh;
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
+
+//Work
+#works {
+  width: 99vw;
+  height: 0;
+  padding-bottom: 200vh;
+
+  .works__title {
+    margin-left: 8vw;
+    padding-bottom: 50px;
+  }
+
+  .works__container {
+    transition: $animation-duration linear;
+
+    .work-left {
+      margin-top: 5vh;
+      width: 60vw;
+      height: 80vh;
+      background: #9d9d9d;
+
+      @include breakpoint(xs) {
+        float: none;
+        margin-top: 10vh;
+        margin-left: 20vw;
+      }
+
+      @include breakpoint(sm) {
+        float: none;
+        margin-top: 10vh;
+        margin-left: 20vw;
+      }
+
+      @include breakpoint(md) {
+        float: left;
+        margin-left: 0vw;
+      }
+
+      @include breakpoint(lg) {
+        float: left;
+        margin-left: 0vw;
+      }
+    }
+
+    .work-right {
+      margin-top: 20vw;
+      width: 60vw;
+      height: 80vh;
+      background: #9d9d9d;
+
+      @include breakpoint(xs) {
+        float: none;
+        margin-top: 10vh;
+        margin-left: 20vw;
+      }
+
+      @include breakpoint(sm) {
+        float: none;
+        margin-top: 10vh;
+        margin-left: 20vw;
+      }
+
+      @include breakpoint(md) {
+        float: right;
+        margin-left: 0vw;
+      }
+
+      @include breakpoint(lg) {
+        float: right;
+        margin-left: 0vw;
+      }
+    }
+  }
+}
+
+//Detail
+#details {
+  width: 99vw;
+  height: 0;
+  padding-bottom: 150vh;
+
+  .details__title {
+    margin-left: 8vw;
+    z-index: 2;
+  }
+
+  img {
+    transition: $animation-duration linear;
+    box-shadow: $box-shadow;
+  }
+
+  .details__left img {
+    margin-top: 0vh;
+    float: left;
+
+    @include breakpoint(xs) {
+      margin-top: 20vh;
+      margin-left: 8vw;
+      width: 300px;
+      height: 225px;
+    }
+
+    @include breakpoint(sm) {
+      margin-left: 8vw;
+      width: 300px;
+      height: 225px;
+    }
+
+    @include breakpoint(md) {
+      margin-left: 8vw;
+      width: 500px;
+      height: 375px;
+    }
+
+    @include breakpoint(lg) {
+      margin-left: 8vw;
+      width: 500px;
+      height: 375px;
+    }
+  }
+
+  .details__right img {
+    float: right;
+    margin-right: 8vw;
+
+    @include breakpoint(xs) {
+      margin-top: 0vh;
+      width: 300px;
+      height: 331px;
+    }
+
+    @include breakpoint(sm) {
+      margin-top: 30vh;
+      width: 300px;
+      height: 331px;
+    }
+
+    @include breakpoint(md) {
+      margin-top: 30vh;
+      width: 550px;
+      height: 609px;
+    }
+
+    @include breakpoint(lg) {
+      margin-top: 30vh;
+      width: 550px;
+      height: 609px;
+    }
+  }
+
+  .details__list {
+    z-index: 1;
+
+    ul {
+      transition: $animation-duration linear;
+    }
+  }
+}
+
+// Skill
+#skills {
+  padding-top: 120vh;
+  width: 99vw;
+  height: 0vh;
+
+  @include breakpoint(xs) {
+    padding-bottom: 75vh;
+  }
+
+  @include breakpoint(sm) {
+    padding-bottom: 75vh;
+  }
+
+  @include breakpoint(md) {
+    padding-bottom: 40vh;
+  }
+
+  @include breakpoint(lg) {
+    padding-bottom: 40vh;
+  }
+
+  .skills__title {
+    margin-left: 8vw;
+  }
+
+  .skills__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+
+    .skills__background {
+      display: flex;
+      background: #c4c4c4;
+
+      @include breakpoint(xs) {
+        flex-direction: column;
+        width: 60vw;
+        height: 80vh;
+      }
+
+      @include breakpoint(sm) {
+        flex-direction: column;
+        width: 60vw;
+        height: 80vh;
+      }
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        width: 60vw;
+        height: 32vh;
+      }
+
+      @include breakpoint(lg) {
+        flex-direction: row;
+        width: 60vw;
+        height: 32vh;
+      }
+
+      span {
+        margin-top: 5vh;
+        margin-left: 11.5vw;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+//Contact
+#contact {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  width: 60vw;
+  height: 0;
+  margin-top: 15vh;
+  margin-left: 8vw;
+  margin-bottom: 20vh;
+
+  span {
+    font-weight: 600;
+    line-height: 20px;
+  }
+}
+
+/* Scroll */
+.arrow-up {
+  z-index: 2;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  background-color: $color-white;
+  color: $color-yellow;
+  border-radius: 50%;
+  border: 1px solid;
+  opacity: 0;
+  transition: $animation-duration ease-in;
+  pointer-events: none;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
